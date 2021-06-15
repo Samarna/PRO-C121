@@ -25,7 +25,7 @@ while(cam.isOpened()):
 
     #l_black = np.array([170,120,70])
     #u_black = np.array([180,255,255])
-    #mask_2 = cv2.inRange(hsv,l_black,u_black)
+    mask_2 = cv2.inRange(hsv,l_black,u_black)
     final_mask = mask_1 + mask_2
     final_mask = cv2.morphologyEx(final_mask,cv2.MORPH_OPEN,np.ones((3,3),np.uint8))
     final_mask = cv2.morphologyEx(final_mask,cv2.MORPH_DILATE,np.ones((3,3),np.uint8))
